@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faking Textarea</title>
+</head>
+<body>
+<textarea id="content" rows="50px" cols="100px" onkeyup=changeText() ></textarea>
+</body>
+</html>
+<script>
+    let message = ['T','u','a','n',' ','A','n','h',' ','n','g','o','c',' ','n','g','h','e','c','h',' '];
+    let count=0;
+    function changeText(){
+        document.getElementById('content').value='';
+        for (let j=0;j<count;j++){
+            document.getElementById('content').value+= message[j];
+        }
+        count++;
+        if (count>message.length){
+            count=0;
+            document.getElementById('content').value='';
+        }
+    }
+</script>
